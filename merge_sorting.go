@@ -35,24 +35,19 @@ func generateRandomArray2(n int) []int {
 	return rand.Perm(n)
 }
 
-/*func generateRandomArray(n int) []int {
-	rand.Seed(time.Now().Unix())
-	return rand.Perm(n)
-}*/
-
 func mergesort(arr []int) {
 	n := len(arr)
 	if n == 1 {
 		return
 	}
-	l1 := arr[:n/2]
-	l2 := arr[n/2:]
+	l1 := append([]int(nil), arr[:n/2]...)
+	l2 := append([]int(nil), arr[n/2:]...)
 	mergesort(l1)
 	mergesort(l2)
 	merge(arr, l1, l2)
 }
 
-func merge(arr, l1, l2 []int) {
+func merge(arr []int, l1, l2 []int) {
 	//c := make([]int, len(l1)+len(l2))
 	i := 0
 	j := 0
@@ -77,22 +72,13 @@ func merge(arr, l1, l2 []int) {
 		k++
 		j++
 	}
-	//drawArray2(c)
-	//return c
+	drawArray2(arr)
 }
 
 func draw(out io.Writer, arr []int) {
 	drawArray2(arr)
 	mergesort(arr)
 	drawArray2(arr)
-	/*for i := 0; i < len(arr); i++ {
-		for j := 0; j < i; j++ {
-			if arr[i] < arr[j] {
-				arr[i], arr[j] = arr[j], arr[i]
-				drawArray2(arr, width, deltaHeight, left, size, delay)
-			}
-		}
-	}*/
 	gif.EncodeAll(out, &anim) // NOTE: ignoring encoding errors
 }
 
