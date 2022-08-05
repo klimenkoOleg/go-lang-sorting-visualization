@@ -11,8 +11,9 @@ Vizualization how different sorting algorythms work.
 
 
 # Merge sorting. This is done in file _*merge_sorting.go*_
-
-![Merge sort](https://github.com/klimenkoOleg/go-lang-sorting-visualization/blob/main/img/merge_sorting_out.gif?raw=true)
+<p align="center">
+  <img width="500" height="500" src="https://github.com/klimenkoOleg/go-lang-sorting-visualization/blob/main/img/merge_sorting_out.gif?raw=true)" />
+</p>
 
 
 # Quick sorting. This is done in file _*quick_sorting.go*_
