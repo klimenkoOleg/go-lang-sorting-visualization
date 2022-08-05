@@ -12,10 +12,12 @@ Vizualization how different sorting algorythms work.
 
 # Merge sorting. This is done in file _*merge_sorting.go*_
 <p align="center">
-  <img width="500" height="500" src="https://github.com/klimenkoOleg/go-lang-sorting-visualization/blob/main/img/merge_sorting_out.gif?raw=true)" />
+  <img width="600" height="600" src="https://github.com/klimenkoOleg/go-lang-sorting-visualization/blob/main/img/merge_sorting_out.gif?raw=true)" />
 </p>
 
 
 # Quick sorting. This is done in file _*quick_sorting.go*_
+<p align="center">
+  <img width="600" height="600" src="https://github.com/klimenkoOleg/go-lang-sorting-visualization/blob/main/img/quick_sorting_out.gif?raw=true)" />
+</p>
 
-![Quick sort](https://github.com/klimenkoOleg/go-lang-sorting-visualization/blob/main/img/quick_sorting_out.gif?raw=true)
