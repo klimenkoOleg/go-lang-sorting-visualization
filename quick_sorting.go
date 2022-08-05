@@ -1,27 +1,38 @@
 package main
 
 import (
-	"os"
+	"go-lang-sorting-visualization/internal/utils"
+	"go-lang-sorting-visualization/internal/utils/drawing"
+	"image/gif"
 )
 
+var globalArr2 []int
+var sortedGlobalArr2 []int
+
+var arrLen2 = 50
+
 func main() {
-	generateRandomArray2(arrLen)
-	draw(os.Stdout)
+	anim := gif.GIF{}
+	globalArr2 = utils.GenerateRandomArray(arrLen2)
+	sortedGlobalArr2 = utils.GenerateRandomArray(arrLen2)
+
+	quickSort(&anim, globalArr2)
+	drawing.SaveToOutput(&anim)
 }
 
-func quickSort(arr []int) {
-	quickSortHelper(arr, 0, len(arr)-1)
+func quickSort(anim *gif.GIF, arr []int) {
+	quickSortHelper(anim, arr, 0, len(arr)-1)
 }
 
-func quickSortHelper(arr []int, first, last int) {
+func quickSortHelper(anim *gif.GIF, arr []int, first, last int) {
 	if first < last {
-		pivot := partition(arr, first, last)
-		quickSortHelper(arr, first, pivot-1)
-		quickSortHelper(arr, pivot+1, last)
+		pivot := partition(anim, arr, first, last)
+		quickSortHelper(anim, arr, first, pivot-1)
+		quickSortHelper(anim, arr, pivot+1, last)
 	}
 }
 
-func partition(arr []int, first, last int) int {
+func partition(anim *gif.GIF, arr []int, first, last int) int {
 	pivotvalue := arr[first]
 
 	leftmark := first + 1
@@ -39,9 +50,10 @@ func partition(arr []int, first, last int) int {
 			done = true
 		} else {
 			arr[leftmark], arr[rightmark] = arr[rightmark], arr[leftmark]
+			drawing.DrawArray(anim, arr, arr, 0, len(arr), leftmark, rightmark)
 		}
 	}
 	arr[first], arr[rightmark] = arr[rightmark], arr[first]
-
+	drawing.DrawArray(anim, arr, arr, 0, len(arr), first, rightmark)
 	return rightmark
 }
