@@ -15,7 +15,6 @@ func main() {
 	anim := gif.GIF{}
 	globalArr2 = utils.GenerateRandomArray(arrLen2)
 	sortedGlobalArr2 = utils.GenerateRandomArray(arrLen2)
-
 	quickSort(&anim, globalArr2)
 	drawing.SaveToOutput(&anim)
 }
