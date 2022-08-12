@@ -55,4 +55,5 @@ func partition(anim *gif.GIF, arr []int, first, last int) int {
 	arr[first], arr[rightmark] = arr[rightmark], arr[first]
 	drawing.DrawArray(anim, arr, arr, 0, len(arr), first, rightmark)
 	return rightmark
+
 }
