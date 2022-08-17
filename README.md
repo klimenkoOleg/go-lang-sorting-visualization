@@ -1,6 +1,7 @@
 Go lang implementation.
 
 
+
 Vizualization how different sorting algorythms work.
 
 # Bubble sorting. This is done in file _*sorting.go*_
